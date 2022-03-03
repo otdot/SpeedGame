@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Hubballi", cursive;
+}
+
+body {
+  background-color: steelblue;
+}
+
+header {
+  text-align: center;
+  font-size: 2rem;
+  margin: 3rem;
+}
+
+main {
+  margin: 2rem;
+}
+
+#score {
+  text-align: center;
+}
+
+.buttons {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  margin: 1rem;
+  background-color: white;
+  height: 9rem;
+  width: 9rem;
+  border-radius: 50%;
+}
+
+.activeButton {
+  background-color: darksalmon;
+}
+
+.start_stop {
+  margin: 2rem;
+  text-align: center;
+}
+
+#startbutton {
+  border: 0;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 2px;
+  margin: 1rem;
+}
+
+#stopbutton {
+  border: 0;
+  width: 5rem;
+  height: 2rem;
+  border-radius: 2px;
+  margin: 1rem;
+}
+
+.container {
+  background-color: white;
+  height: 10rem;
+  width: 25rem;
+  border: black solid 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container::before {
+  content: "";
+  opacity: 0.8;
+}
