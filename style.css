@@ -31,12 +31,15 @@ main {
 }
 
 .button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 1rem;
   background-color: white;
   height: 9rem;
   width: 9rem;
   border-radius: 50%;
+  font-size: 2rem;
 }
 
 .activeButton {
@@ -54,6 +57,7 @@ main {
   height: 2rem;
   border-radius: 2px;
   margin: 1rem;
+  position: relative;
 }
 
 #stopbutton {
@@ -65,17 +69,38 @@ main {
 }
 
 .container {
-  background-color: white;
-  height: 10rem;
-  width: 25rem;
-  border: black solid 1px;
   position: absolute;
-  top: 50%;
+  height: 14rem;
+  width: 30rem;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px black solid;
+  display: none;
 }
 
-.container::before {
+/* .container::before {
+  border-radius: 2px;
+  border: 1px black solid;
   content: "";
+  position: fixed;
+  top: 12rem;
+  left: 18rem;
+  bottom: 16rem;
+  right: 18rem;
   opacity: 0.8;
+} */
+
+.stopGameBox p {
+  position: absolute;
+  bottom: 53px;
+  left: 10rem;
+  font-size: 1.5rem;
+}
+
+.stopGameBox button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
