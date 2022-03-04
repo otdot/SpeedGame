@@ -35,7 +35,7 @@ main {
   justify-content: center;
   align-items: center;
   margin: 1rem;
-  background-color: white;
+  background-color: #ffffff;
   height: 9rem;
   width: 9rem;
   border-radius: 50%;
@@ -43,7 +43,7 @@ main {
 }
 
 .activeButton {
-  background-color: darksalmon;
+  /* adding class to button with color */
 }
 
 .start_stop {
@@ -61,6 +61,7 @@ main {
 }
 
 #stopbutton {
+  display: none;
   border: 0;
   width: 5rem;
   height: 2rem;
