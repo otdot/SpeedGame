@@ -39,10 +39,6 @@ main {
   font-size: 2rem;
 }
 
-.activeButton {
-  /* adding class to button with color */
-}
-
 .start_stop {
   margin: 2rem;
   text-align: center;
@@ -77,18 +73,6 @@ main {
   border: 1px black solid;
   display: none;
 }
-
-/* .container::before {
-  border-radius: 2px;
-  border: 1px black solid;
-  content: "";
-  position: fixed;
-  top: 12rem;
-  left: 18rem;
-  bottom: 16rem;
-  right: 18rem;
-  opacity: 0.8;
-} */
 
 .stopGameBox p {
   position: absolute;
