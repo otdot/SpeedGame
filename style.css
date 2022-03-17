@@ -31,9 +31,6 @@ main {
 }
 
 .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 1rem;
   background-color: #ffffff;
   height: 9rem;
@@ -104,4 +101,20 @@ main {
   position: absolute;
   top: 1rem;
   right: 1rem;
+}
+
+@media (max-width: 667px) {
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .container {
+    width: 15rem;
+  }
+
+  .stopGameBox p {
+    left: 2rem;
+  }
 }

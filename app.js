@@ -13,6 +13,28 @@ let pace = 2000;
 let acceleration = 100;
 let timer;
 let count = 0;
+let startSound;
+let endSound;
+let gameOn = false;
+
+function sound(src) {
+  this.sound = document.createElement("audio");
+  this.sound.src = src;
+  this.sound.setAttribute("preload", "auto");
+  this.sound.setAttribute("controls", "none");
+  this.sound.style.display = "none";
+  document.body.appendChild(this.sound);
+  this.sound.loop = true;
+  this.play = function () {
+    this.sound.play();
+  };
+  this.stop = function () {
+    this.sound.pause();
+  };
+  this.volume = function (volume) {
+    this.sound.volume = volume;
+  };
+}
 
 const randomColor = () => {
   const red = Math.floor(Math.random() * 230);
@@ -84,15 +106,22 @@ const speedGame = (e) => {
 };
 
 const startGame = () => {
+  gameOn = true;
   stopbutton.style.display = "inline-block";
   startbutton.style.display = "none";
+  mySound = new sound("./static/Bongos.mp3");
+  mySound.play();
   round();
   gamebuttons.forEach((button) => button.addEventListener("click", speedGame));
 };
 
 const stopGame = () => {
+  gameOn = false;
   main.style.pointerEvents = "none";
   stopLoop();
+  mySound.stop();
+  endSound = new sound("./static/Failure.mp3");
+  endSound.play();
   startbutton.style.display = "inline-block";
   stopbutton.style.display = "none";
   if (score < 10) finalScore.textContent = `Your final score: ${score}`;
@@ -109,16 +138,10 @@ const showModal = () => {
 
 const closeModal = () => {
   main.style.pointerEvents = "auto";
-  
+
   window.location.reload();
 };
 
 startbutton.addEventListener("click", startGame);
 stopbutton.addEventListener("click", stopGame);
 closeModalbutton.addEventListener("click", closeModal);
-
-// gamebuttons.forEach((button) =>
-//   button.addEventListener("click", () =>
-//     console.log(`button ${button.textContent} was clicked`)
-//   )
-// );
