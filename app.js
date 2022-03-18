@@ -54,6 +54,7 @@ const stopLoop = () => {
   gamebuttons.forEach((button) => {
     button.style.backgroundColor = "#ffffff";
     button.classList.remove("activeButton");
+    button.innerHTML = "";
   });
 };
 
@@ -63,6 +64,7 @@ const timeOut = (buttonIndex) => {
       if (button.dataset.index == buttonIndex) {
         button.style.backgroundColor = "#ffffff";
         button.classList.remove("activeButton");
+        button.innerHTML = "";
       }
     });
     round();
@@ -82,6 +84,7 @@ const round = () => {
   gamebuttons.forEach((button) => {
     if (button.dataset.index == buttonIndex) {
       button.style.backgroundColor = randomColor();
+      button.innerHTML = `<i class="fa-solid fa-drum"></i>`;
       button.classList.add("activeButton");
     }
   });
@@ -97,6 +100,7 @@ const speedGame = (e) => {
     gamebuttons.forEach((button) => {
       button.style.backgroundColor = "#ffffff";
       button.classList.remove("activeButton");
+      button.innerHTML = "";
     });
     clearTimeout(timer);
     round();
